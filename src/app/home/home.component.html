@@ -1,0 +1,20 @@
+<div class="stats">
+  <div class="content">
+    <div class="box" *ngFor="let element of stats">
+      <i [ngClass]="'fa-brands fa-' + element.title.split(' ')[0].toLowerCase()"></i>
+      <div class="number">{{element.total}}</div>
+      <p>{{element.title}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="dashboard-grid">
+  <app-stat-card
+    *ngFor="let stat of stats"
+    [title]="stat.title"
+    [total]="stat.total"
+    [targetDiffPercent]="stat.targetDiffPercent"
+    [followersHistory]="stat.followersHistory"
+  >
+  </app-stat-card>
+</div>

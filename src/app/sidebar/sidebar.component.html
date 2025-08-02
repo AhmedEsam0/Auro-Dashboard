@@ -1,0 +1,57 @@
+
+  <div class="sidebar">
+    <a routerLink="Home" class="text-center">
+      <img src="Logo.JPG" class="logo" />
+    </a>
+    <ul class="menu">
+      <li>
+        <a routerLink="Home" routerLinkActive="active"
+          ><i class="fas fa-home"></i><span>Home</span></a
+        >
+      </li>
+      <li>
+        <a routerLink="Moderation" routerLinkActive="active"
+          ><i class="fas fa-award"></i><span>Moderation</span></a
+        >
+      </li>
+
+      <li class="dropdown" (click)="toggleStyle(magicEl)" #magicEl>
+        <a
+          class="dropdown-trigger cursor-pointer"
+          [class.active]="isMagicActive()"
+          (click)="toggleSubmenu()"
+        >
+          <i class="fas fa-magic"></i>
+          <span>Magic</span>
+          <i class="fa-solid fa-angle-down arrow-icon"></i>
+        </a>
+        <div class="submenu" [ngClass]="{ open: isSubmenuOpen }">
+          <a routerLink="Magic/Facebook" routerLinkActive="active"
+            ><i class="fa-brands fa-facebook"></i><span>Facebook</span></a
+          >
+          <a routerLink="Magic/Instagram" routerLinkActive="active"
+            ><i class="fa-brands fa-instagram"></i><span>Instagram</span></a
+          >
+          <a routerLink="Magic/Snapchat" routerLinkActive="active"
+            ><i class="fa-brands fa-snapchat"></i><span>Snapchat</span></a
+          >
+          <a routerLink="Magic/Telegram" routerLinkActive="active"
+            ><i class="fa-brands fa-telegram"></i><span>Telegram</span></a
+          >
+          <a routerLink="Magic/TikTok" routerLinkActive="active"
+            ><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a
+          >
+          <a routerLink="Magic/WhatsApp" routerLinkActive="active"
+            ><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a
+          >
+        </div>
+      </li>
+
+      <li>
+        <a routerLink="Settings" routerLinkActive="active"
+          ><i class="fas fa-cog"></i><span>Settings</span></a
+        >
+      </li>
+    </ul>
+  </div>
+

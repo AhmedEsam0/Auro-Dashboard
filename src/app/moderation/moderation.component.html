@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Moderation Hub</h2>
+    <div class="card-actions">
+      <button class="btn btn-outline">View All</button>
+    </div>
+  </div>
+
+  <div class="moderation-tabs">
+    <div
+      class="moderation-tab"
+      (click)="setTab('pending')"
+      [class.active]="selectedTab === 'pending'"
+    >
+      Pending
+    </div>
+    <div
+      class="moderation-tab"
+      (click)="setTab('approved')"
+      [class.active]="selectedTab === 'approved'"
+    >
+      Approved
+    </div>
+    <div
+      class="moderation-tab"
+      (click)="setTab('rejected')"
+      [class.active]="selectedTab === 'rejected'"
+    >
+      Rejected
+    </div>
+  </div>
+
+  <div class="moderation-list" [ngSwitch]="selectedTab">
+    <div *ngSwitchCase="'pending'">
+      <ng-container *ngIf="pendingItems.length > 0; else temp">
+        <app-moderation-card
+          *ngFor="let item of pendingItems; else: temp"
+          [item]="item"
+          (approve)="approveItem($event)"
+          (reject)="rejectItem($event)"
+        ></app-moderation-card
+      ></ng-container>
+    </div>
+
+    <div *ngSwitchCase="'approved'">
+      <ng-container *ngIf="approvedItems.length > 0; else temp">
+        <app-moderation-card
+          *ngFor="let item of approvedItems"
+          [item]="item"
+        ></app-moderation-card
+      ></ng-container>
+    </div>
+
+    <div *ngSwitchCase="'rejected'">
+      <ng-container *ngIf="rejectedItems.length > 0; else temp">
+        <app-moderation-card
+          *ngFor="let item of rejectedItems"
+          [item]="item"
+        ></app-moderation-card
+      ></ng-container>
+    </div>
+
+
+      <ng-template #temp>
+        <div class="empty-message">
+          No {{ selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1) }} Moderation Tasks have been
+          {{
+            selectedTab === "pending"
+              ? "Created"
+              : selectedTab === "approved"
+              ? "Accepted"
+              : "Rejected"
+          }}
+          Yet.
+        </div>
+      </ng-template>
+
+  </div>
+</div>

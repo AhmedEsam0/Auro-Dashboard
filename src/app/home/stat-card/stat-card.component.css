@@ -1,0 +1,53 @@
+.stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px #0001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-title h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.stat-title p {
+  margin: 0;
+  font-size: 13px;
+  color: #888;
+}
+
+.stat-value h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #111;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+}
+
+.stat-change .arrow {
+  font-size: 16px;
+}
+
+.stat-chart {
+  margin-top: 16px;
+  height: 300px;
+}
+

@@ -1,0 +1,10 @@
+.flex-holder{
+    display: flex;
+}
+.container-padding{
+    padding: 20px;
+}
+.flex-basis-1{
+    background-color: #f9f9fb;
+    flex: 1;
+}

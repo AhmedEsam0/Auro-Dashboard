@@ -1,0 +1,143 @@
+.moderation-item {
+  margin: 20px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #ddd;
+  position: relative;
+  overflow: hidden;
+
+  & .diagonal-shine {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    top: -200%;
+    right: -100%;
+    transform: skewX(70deg);
+
+    pointer-events: none;
+
+    transition: opacity 0.1s ease-in-out;
+    z-index: 2000;
+  }
+
+  & .diagonal-shine.approved {
+    background: linear-gradient(
+      to right,
+      transparent 30%,
+      rgba(34, 197, 94, 0.6) 50%,
+      transparent 70%
+    );
+    animation: diagonalShine 1.6s ease-out forwards;
+  }
+  & .diagonal-shine.rejected {
+    background: linear-gradient(
+      to right,
+      transparent 30%,
+      rgba(244, 67, 54, 0.6) 50%,
+      transparent 70%
+    );
+    animation: diagonalShine 1.6s ease-out forwards;
+  }
+}
+
+@keyframes diagonalShine {
+  0% {
+    top: -200%;
+    right: -100%;
+  }
+
+  100% {
+    top: 100%;
+    right: 100%;
+  }
+}
+
+.moderation-item.pending {
+  border-left-color: #ffc107;
+}
+
+.moderation-item.approved {
+  border-left-color: #4caf50;
+}
+
+.moderation-item.rejected {
+  border-left-color: #f44336;
+}
+
+.moderation-content {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.moderation-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .moderation-meta {
+  color: #aaa;
+}
+
+.moderation-status {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.moderation-status.pending {
+  background-color: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+}
+
+.moderation-status.approved {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+.moderation-status.rejected {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+.moderation-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.moderation-btn {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.moderation-btn.approve {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+}
+
+.moderation-btn.approve:hover {
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.moderation-btn.reject {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+}
+
+.moderation-btn.reject:hover {
+  background-color: rgba(244, 67, 54, 0.2);
+}

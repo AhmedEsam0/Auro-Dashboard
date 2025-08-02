@@ -1,0 +1,30 @@
+<div class="header">
+  <div class="header-content">
+    <div class="card">
+      <div class="flex-between-holder">
+        <div class="greeting">Welcome back, Ahmed</div>
+        <div class="icons">
+          <span>
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </span>
+          <span>
+            <i class="fas fa-bell"></i>
+          </span>
+
+          <span class="user-icon" (click)="toggleUserMenu()" #userIcon>
+            <i class="fa-solid fa-circle-user"></i>
+
+            <ul class="user-dropdown" *ngIf="userMenuVisible" #userDropdown>
+              <li><a routerLink="Settings">Settings</a></li>
+              <li><a routerLink="/help">Ticket</a></li>
+              <li class="red-bgc">
+                <a (click)="logout()">Sign Out</a>
+                <i class="fa fa-sign-out"></i>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

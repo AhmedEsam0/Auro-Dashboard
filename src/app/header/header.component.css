@@ -1,0 +1,120 @@
+.header {
+  padding: 0 20px;
+  background-color: #f9f9fb;
+  flex: 1;
+}
+
+.header-content {
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.card {
+  background-color: var(--card-light, #fff);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light, 0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+.flex-between-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greeting {
+  font-size: 28px;
+
+  background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 50%, #56ccf2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.icons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+}
+
+.icons h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+}
+
+.icons i {
+  font-size: 22px;
+  line-height: 1;
+  background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 50%, #56ccf2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+.fa-circle-user:before,
+.fa-user-circle:before,
+.fa-bell:before,
+.fa-facebook-messenger:before {
+  padding: 5px;
+}
+
+.user-icon {
+  position: relative;
+  cursor: pointer;
+}
+.user-dropdown li:not(:last-child) a {
+  text-decoration: none;
+  color: #333;
+}
+.user-dropdown {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  list-style: none;
+  z-index: 100;
+  width: 150px;
+}
+
+.user-dropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s linear;
+}
+.user-dropdown li.red-bgc {
+  color: white;
+  background: red;
+}
+.user-dropdown li.red-bgc:hover {
+  color: white;
+  background: #d13343;
+}
+.fa-arrow-right-from-bracket:before,
+.fa-sign-out:before {
+  color: white;
+  font-size: 15px;
+  margin-left: 7px;
+}
+.user-dropdown li:hover {
+  background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 50%, #56ccf2 100%);
+  & a {
+    color: white;
+  }
+}

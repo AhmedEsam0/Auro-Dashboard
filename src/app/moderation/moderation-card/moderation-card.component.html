@@ -1,0 +1,28 @@
+<div class="moderation-item" [ngClass]="item.status">
+  <div class="moderation-meta">
+    <h2>{{ item.title }}</h2>
+    <span class="moderation-status" [ngClass]="item.status">
+      {{ item.status | titlecase }}
+    </span>
+  </div>
+
+  <div class="moderation-content">
+    <img *ngIf="item.image" [src]="item.image" width="20%" />
+    <p *ngIf="!item.image">{{ item.content }}</p>
+  </div>
+
+  <div class="moderation-actions" *ngIf="item.status === 'pending'">
+    <button
+      class="moderation-btn approve"
+      #approveBtn
+      (click)="triggerSlider(approveBtn,'approved')"
+    >
+
+      <i class="fas fa-check"></i> Approve
+    </button>
+    <button class="moderation-btn reject" #rejectBtn (click)="triggerSlider(rejectBtn,'rejected')">
+      <i class="fas fa-times"></i> Reject
+    </button>
+  </div>
+  <div class="diagonal-shine"></div>
+</div>
