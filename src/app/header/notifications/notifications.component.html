@@ -1,0 +1,54 @@
+<div class="notifications">
+  <div class="overlay" (click)="outsideNotificationClick.emit()"></div>
+  <div class="notifications-container">
+    <div class="header">
+      <h2>Notifications <span>3</span></h2>
+      <button>Mark all as read</button>
+    </div>
+
+
+    <div class="notification">
+      <div class="avatar"></div>
+      <div class="notification-content">
+        <div class="title">Sarah Chen mentioned you</div>
+        <div class="message">&#64;john.doe Can you review the latest design mockups?</div>
+        <div class="meta">2 min ago · <span class="tag">Mention</span></div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="avatar">⚙️</div>
+      <div class="notification-content">
+        <div class="title">System Update</div>
+        <div class="message">Your workspace has been updated to version 2.4.1</div>
+        <div class="meta">1 hour ago · <span class="tag">System</span></div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="avatar"></div>
+      <div class="notification-content">
+        <div class="title">Project completed</div>
+        <div class="message">Marketing website redesign has been marked as complete</div>
+        <div class="meta">3 hours ago · <span class="tag">Project</span></div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="avatar"></div>
+      <div class="notification-content">
+        <div class="title">Mike Johnson commented</div>
+        <div class="message">Left a comment on "Q1 Budget Planning" document</div>
+        <div class="meta">5 hours ago · <span class="tag">Comment</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast">
+    <div class="icon">🔔</div>
+    <div class="text">
+      <div><strong>New message received</strong></div>
+      <div>You have a new message from Alex</div>
+    </div>
+  </div>
+</div>

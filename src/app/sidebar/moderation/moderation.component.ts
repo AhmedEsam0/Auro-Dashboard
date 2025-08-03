@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
-import { ModerationItem } from '../Models/ModerationItem.model';
+import { ModerationItem } from '../../Models/ModerationItem.model';
 import { ModerationCardComponent } from './moderation-card/moderation-card.component';
 
 @Component({

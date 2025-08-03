@@ -2,12 +2,12 @@
   <div class="header-content">
     <div class="card">
       <div class="flex-between-holder">
-        <div class="greeting">Welcome back, Ahmed</div>
+        <div class="greeting">Welcome back,<span> Ahmed</span></div>
         <div class="icons">
           <span>
             <i class="fa-brands fa-facebook-messenger"></i>
           </span>
-          <span>
+          <span (click)="initializeNotificationComponent()">
             <i class="fas fa-bell"></i>
           </span>
 
@@ -28,3 +28,4 @@
     </div>
   </div>
 </div>
+<app-notifications (outsideNotificationClick)="showNotificationComponent=false" *ngIf="showNotificationComponent"></app-notifications>

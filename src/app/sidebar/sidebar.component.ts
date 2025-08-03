@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'sidebar',

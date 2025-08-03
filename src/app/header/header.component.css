@@ -26,7 +26,6 @@
 
 .greeting {
   font-size: 28px;
-
   background: linear-gradient(135deg, #ff6ec4 0%, #7873f5 50%, #56ccf2 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -40,6 +39,7 @@
 }
 
 .icons span {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

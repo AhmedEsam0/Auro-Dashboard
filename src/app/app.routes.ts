@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ModerationComponent } from './moderation/moderation.component';
-import { FacebookMagicComponent } from './facebook-magic/facebook-magic.component';
-import { InstagramMagicComponent } from './instagram-magic/instagram-magic.component';
-import { SnapchatMagicComponent } from './snapchat-magic/snapchat-magic.component';
-import { TelegramMagicComponent } from './telegram-magic/telegram-magic.component';
-import { TiktokMagicComponent } from './tiktok-magic/tiktok-magic.component';
-import { WhatsappMagicComponent } from './whatsapp-magic/whatsapp-magic.component';
-import { SettingsComponent } from './settings/settings.component';
+import { HomeComponent } from './sidebar/home/home.component';
+import { ModerationComponent } from './sidebar/moderation/moderation.component';
+import { FacebookMagicComponent } from './sidebar/magic/facebook-magic/facebook-magic.component';
+import { InstagramMagicComponent } from './sidebar/magic/instagram-magic/instagram-magic.component';
+import { SnapchatMagicComponent } from './sidebar/magic/snapchat-magic/snapchat-magic.component';
+import { TelegramMagicComponent } from './sidebar/magic/telegram-magic/telegram-magic.component';
+import { TiktokMagicComponent } from './sidebar/magic/tiktok-magic/tiktok-magic.component';
+import { WhatsappMagicComponent } from './sidebar/magic/whatsapp-magic/whatsapp-magic.component';
+import { SettingsComponent } from './sidebar/settings/settings.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },

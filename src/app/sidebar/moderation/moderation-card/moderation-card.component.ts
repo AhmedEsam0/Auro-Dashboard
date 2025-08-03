@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ModerationItem } from '../../Models/ModerationItem.model';
-import confetti from 'canvas-confetti/dist/confetti.module.mjs';
+import { ModerationItem } from '../../../Models/ModerationItem.model';
+import { AnimationsService } from '../../../../Services/animations.service';
+
 
 @Component({
   selector: 'app-moderation-card',
@@ -12,6 +13,7 @@ import confetti from 'canvas-confetti/dist/confetti.module.mjs';
   styleUrl: './moderation-card.component.css',
 })
 export class ModerationCardComponent {
+  constructor(private animations:AnimationsService){}
   @Input() item: ModerationItem;
   @Output() approve: EventEmitter<ModerationItem> =
     new EventEmitter<ModerationItem>();
@@ -19,57 +21,10 @@ export class ModerationCardComponent {
     new EventEmitter<ModerationItem>();
 
 
-  fireworksFromButton(button: HTMLElement) {
-    const item = button.closest('.moderation-item') as HTMLElement;
-    if (!item) return;
-    const rect = item.getBoundingClientRect();
-
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    const origins = [
-      // Top center
-      {
-        x: (rect.left + rect.width / 2) / width,
-        y: rect.top / height,
-      },
-      // Bottom center
-      {
-        x: (rect.left + rect.width / 2) / width,
-        y: (rect.top + rect.height) / height,
-      },
-      // Left center
-      {
-        x: rect.left / width,
-        y: (rect.top + rect.height / 2) / height,
-      },
-      // Right center
-      {
-        x: (rect.left + rect.width) / width,
-        y: (rect.top + rect.height / 2) / height,
-      },
-    ];
-
-    const defaults = {
-      startVelocity: 35,
-      spread: 360,
-      ticks: 50,
-      scalar: 0.9,
-      zIndex: 9999,
-    };
-
-    origins.forEach((origin) => {
-      confetti({
-        ...defaults,
-        particleCount: 150,
-        origin,
-      });
-    });
-  }
-
+  
   triggerSlider(button: HTMLElement, action: 'approved' | 'rejected') {
     if (action === 'approved') {
-      this.fireworksFromButton(button);
+      this.animations.fireworksFromButton(button);
     }
 
     const item = button.closest('.moderation-item') as HTMLElement;

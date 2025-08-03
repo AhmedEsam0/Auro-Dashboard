@@ -1,6 +1,13 @@
 <div class="moderation-item" [ngClass]="item.status">
   <div class="moderation-meta">
-    <h2>{{ item.title }}</h2>
+    <h2>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi
+      praesentium totam dolores, quidem delectus fuga? Debitis dignissimos
+      repellendus modi ratione fugit ut id quae assumenda voluptates, beatae
+      reiciendis quam, dolorum quis odio accusantium optio autem accusamus.
+      Facilis nam, molestias dignissimos incidunt, assumenda ratione labore
+      veritatis accusantium non ullam et nulla.
+    </h2>
     <span class="moderation-status" [ngClass]="item.status">
       {{ item.status | titlecase }}
     </span>
@@ -15,12 +22,15 @@
     <button
       class="moderation-btn approve"
       #approveBtn
-      (click)="triggerSlider(approveBtn,'approved')"
+      (click)="triggerSlider(approveBtn, 'approved')"
     >
-
       <i class="fas fa-check"></i> Approve
     </button>
-    <button class="moderation-btn reject" #rejectBtn (click)="triggerSlider(rejectBtn,'rejected')">
+    <button
+      class="moderation-btn reject"
+      #rejectBtn
+      (click)="triggerSlider(rejectBtn, 'rejected')"
+    >
       <i class="fas fa-times"></i> Reject
     </button>
   </div>
